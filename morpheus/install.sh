@@ -43,7 +43,7 @@ set -eux \
     && git clone https://github.com/ecmwf/skinnywms.git \
     && cd skinnywms \
     && git checkout ${SKINNYWMS_VERSION} \
-    && pip3 install -r /app/skinnywms/requirements.txt
+    && pip3 install -r /app/skinnywms/requirements.txt \
     && chmod -R 777 /app/ \
 
 mkdir -p /shared/data

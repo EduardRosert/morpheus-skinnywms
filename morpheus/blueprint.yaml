@@ -24,7 +24,7 @@ tiers:
                       layout:
                         code: acd1faac-e62d-4921-a114-5e378181ed51
                         id: 1213
-                      name: 'jupyterhub-${sequence.toString().padLeft(3,''0'')}'
+                      name: 'skinnywms-${sequence.toString().padLeft(3,''0'')}'
                       allowExisting: false
                       type: ubuntu-ewc
                       userGroup:
@@ -70,7 +70,9 @@ tiers:
                       id: 7
 name: SkinnyWMS on Ubuntu
 description: 'SkinnyWMS with ecCodes, Magics and Polytope'
+templateImage: ''
 type: morpheus
 config:
   isVpcSelectable: true
   isEC2: false
+
