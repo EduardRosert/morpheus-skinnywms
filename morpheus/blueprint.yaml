@@ -1,13 +1,14 @@
+image: /assets/apps/template.png
 tiers:
   App:
     linkedTiers: []
     tierIndex: 1
     instances:
       - instance:
-          name: SkinnyWMS
+          name: skinnywms
           type: ubuntu-ewc
         environments:
-          Dev:
+          Production:
             groups:
               default:
                 clouds:
@@ -23,8 +24,7 @@ tiers:
                       layout:
                         code: acd1faac-e62d-4921-a114-5e378181ed51
                         id: 1213
-                      name: 'skinnywms'
-                      description: ''
+                      name: 'jupyterhub-${sequence.toString().padLeft(3,''0'')}'
                       allowExisting: false
                       type: ubuntu-ewc
                       userGroup:
@@ -44,11 +44,11 @@ tiers:
                         showNetworkDhcpLabel: true
                         row: 0
                         network:
-                          idName: data
-                          id: network-62
+                          idName: private
+                          id: network-56
                           hasPool: false
                     workflow:
-                      taskSetId: 18
+                      taskSetId: 22
                     loadBalancer: []
                     volumes:
                       - vId: 994
@@ -59,10 +59,6 @@ tiers:
                         storageType: 4
                         minStorage: 21474836480
                         maxStorage: 21474836480
-                    lock:
-                      config:
-                        securityGroup: true
-                        availabilityZone: true
                     config:
                       createUser: true
                       securityGroup: DWD-allowAll
@@ -72,17 +68,9 @@ tiers:
                       id: 498
                     group:
                       id: 7
-                    lockedFields:
-                      - instance.layout.id
-                      - config.securityGroup
-                      - workflow.taskSetId
-                      - networks
-                      - config.availabilityZone
-name: Jupyterhub on Ubuntu
-description: 'Jupyterhub with ecCodes, Magics and Polytope'
+name: SkinnyWMS on Ubuntu
+description: 'SkinnyWMS with ecCodes, Magics and Polytope'
 type: morpheus
-category: app
 config:
   isVpcSelectable: true
   isEC2: false
-image: /assets/apps/template.png

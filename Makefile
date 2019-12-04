@@ -17,7 +17,7 @@ default: install
 
 .PHONY: echo login create-instance install cleanup cleanup-workflows cleanup-tasks cleanup-scripts create-secrets create-scripts create-tasks create-workflows
 
-install: createxw-tasks create-workflows create-blueprints
+install: create-tasks create-workflows create-blueprints
 re-install: cleanup create-tasks create-workflows create-blueprints
 cleanup: cleanup-blueprints cleanup-workflows cleanup-tasks
 
